@@ -1,21 +1,22 @@
 import React from 'react';
 import { Github, ExternalLink } from 'lucide-react';
+import supportSystemImg from '../assets/Screenshot 2026-02-11 222316.png';
 
 const projects = [
     {
         id: 1,
         title: 'Web-Based Customer Support System',
-        description: 'A full-featured online store with cart functionality, user authentication, and payment integration.',
+        description: 'A full-stack customer support platform built using Spring Boot, Java, and MS SQL to streamline ticket management and real-time communication. The system features role-based authentication, live chat, FAQ management, and feedback tracking. Designed with MVC architecture and Agile methodology, it improves response efficiency and service quality. Includes complete CRUD operations and an admin analytics dashboard.',
         tech: ['java', 'spring-boot', 'Tailwind', 'MySQL'],
-        image: 'https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        image: supportSystemImg,
         liveLink: '#',
-        githubLink: '#'
+        githubLink: 'https://github.com/senalanuraheesara/Customer-Care-Support-System'
     },
     {
         id: 2,
-        title: 'Fitness Tracker App',
-        description: 'Mobile-first application to track workouts, diet plans, and progress over time with charts.',
-        tech: ['React Native', 'Firebase', 'Redux'],
+        title: 'Diabetes Prediction Using Machine Learning',
+        description: 'Developed a machine learning-based diabetes risk prediction system using healthcare data. Implemented multiple classification models including Decision Tree, Random Forest, SVM, and XGBoost, with SMOTE for class imbalance handling. Achieved up to 99% accuracy, selecting a tuned Decision Tree model for its high recall and interpretability in healthcare applications.',
+        tech: ['Random Forest', 'Neural Network(MLP)', 'Decision Tree ', 'Support Vector Machine', 'Logistic Regression', 'XGBoost'],
         image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
         liveLink: '#',
         githubLink: '#'
@@ -23,21 +24,13 @@ const projects = [
     {
         id: 3,
         title: 'Taxi Booking Platform',
-        description: 'Web tool that uses OpenAI API to generate blog posts, social media captions, and more.',
-        tech: [ 'Maven', 'Java', 'Tailwind'],
+        description: 'A Java-based web application built using JSP and Servlets that enables passengers to book rides, drivers to accept requests, and admins to manage operations. The system applies core OOP principles and uses Queue (FIFO) and Bubble Sort for ride handling and driver ranking. Data is managed through file handling (read/write operations) instead of a database, demonstrating practical CRUD implementation in Java.',
+        tech: ['Maven', 'Java', 'Tailwind'],
         image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
         liveLink: '#',
-        githubLink: '#'
+        githubLink: 'https://github.com/senalanuraheesara/Taxibooking-platform'
     },
-    {
-        id: 4,
-        title: 'Real-time Chat App',
-        description: 'Instant messaging application with group chats, file sharing, and real-time notifications.',
-        tech: ['Socket.io', 'Express', 'React'],
-        image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-        liveLink: '#',
-        githubLink: '#'
-    },
+
 ];
 
 const Projects = () => {
@@ -49,7 +42,7 @@ const Projects = () => {
                         My Projects
                     </h2>
                     <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-                        A showcase of my recent work, highlighting my skills in full-stack development and UI/UX design.
+                        A selection of my recent work, from complex web applications to innovative tools that solve real-world problems.
                     </p>
                 </div>
 
@@ -78,7 +71,7 @@ const Projects = () => {
                                 <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-orange-500 transition-colors">
                                     {project.title}
                                 </h3>
-                                <p className="text-gray-400 mb-4 line-clamp-2">
+                                <p className="text-gray-400 mb-4">
                                     {project.description}
                                 </p>
 
