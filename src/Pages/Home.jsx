@@ -1,4 +1,5 @@
 import React from 'react';
+import { Mail, Github, Linkedin, Code2, Database, Brain } from 'lucide-react';
 // Import your local image here. Place 'hero.JPG' in the 'src/assets' folder.
 // If your file has a different name or extension, update this line.
 import heroImg from '../assets/hero.JPG';
@@ -6,22 +7,40 @@ import heroImg from '../assets/hero.JPG';
 const Home = () => {
   return (
     <div className="flex flex-col md:flex-row items-center justify-between min-h-screen px-6 md:px-20 py-10">
-      <div className="md:w-1/2 space-y-6">
+      <div className="md:w-1/2 space-y-6" data-aos="fade-right" data-aos-duration="1000">
         <div className="flex space-x-4 mb-4">
-          {/* Social Icons - replace with actual SVGs or Lucide icons later if needed */}
-          <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center text-white font-bold cursor-pointer hover:scale-110 transition-transform">IG</div>
-          <div className="w-10 h-10 bg-black rounded-lg flex items-center justify-center text-white font-bold cursor-pointer hover:scale-110 transition-transform">TK</div>
-          <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-white font-bold cursor-pointer hover:scale-110 transition-transform">GH</div>
-          <div className="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center text-white font-bold cursor-pointer hover:scale-110 transition-transform">YT</div>
+          {/* Social Icons */}
+          <a
+            href="mailto:senalanuraheesara@gmail.com"
+            className="w-10 h-10 bg-gradient-to-r from-red-500 to-orange-500 rounded-lg flex items-center justify-center text-white hover:scale-110 transition-transform shadow-lg"
+          >
+            <Mail size={20} />
+          </a>
+          <a
+            href="https://github.com/senalanuraheesara"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-10 h-10 bg-gray-200 dark:bg-gray-900 rounded-lg flex items-center justify-center text-gray-700 dark:text-white hover:scale-110 transition-transform shadow-lg border border-gray-300 dark:border-white/10"
+          >
+            <Github size={20} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/senal-anuraheesara"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white hover:scale-110 transition-transform shadow-lg"
+          >
+            <Linkedin size={20} />
+          </a>
         </div>
 
-        <h1 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
+        <h1 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
           Hi, I'm <br />
-          <span className="text-white">Senal Anuraheesara</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500 dark:to-white">Senal Anuraheesara</span>
         </h1>
 
-        <p className="text-gray-400 text-lg max-w-lg">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis et harum dolorem sit minus illo nostrum? Tempore, nobis. Recusandae neque exercitationem voluptates tempore tempora sequi.
+        <p className="text-gray-600 dark:text-gray-400 text-lg max-w-lg leading-relaxed">
+          An undergraduate pursuing a BSc (Hons) in Information Technology specializing in Data Science at SLIIT. Driven by a passion for data analysis, machine learning, and software engineering. Eager to build scalable applications that uncover actionable insights and contribute to innovative data-driven solutions.
         </p>
 
         <div className="flex space-x-4 mt-8">
@@ -29,35 +48,32 @@ const Home = () => {
             <span>Download CV</span>
           </button>
 
-          <button className="px-6 py-3 border border-orange-500 text-orange-500 font-semibold rounded-full flex items-center gap-2 hover:bg-orange-500 hover:text-white transition-colors">
+          <a href="#contact" className="px-6 py-3 border border-orange-500 text-orange-500 font-semibold rounded-full flex items-center gap-2 hover:bg-orange-500 hover:text-white transition-colors">
             <span>Contact Me</span>
-          </button>
+          </a>
         </div>
       </div>
 
-      <div className="md:w-1/2 flex justify-center mt-10 md:mt-0 relative">
-        {/* Abstract Background Blur */}
-        <div className="w-80 h-80 md:w-[500px] md:h-[500px] bg-gradient-to-b from-orange-400/20 to-transparent rounded-full absolute blur-3xl -z-10"></div>
-
-        <div className="relative z-10">
-          {/* 3D Character Image */}
-          <div className="w-64 h-64 md:w-96 md:h-96 relative">
+      <div className="md:w-1/2 relative flex justify-center mt-10 md:mt-0" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+        <div className="relative w-80 h-80 md:w-96 md:h-96">
+          <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-purple-600 rounded-full blur-3xl opacity-20 dark:opacity-30 animate-pulse"></div>
+          <div className="absolute inset-4 bg-white dark:bg-gray-900 rounded-full border-4 border-orange-500/20 z-10 overflow-hidden">
             <img
               src={heroImg}
-              alt="3D Avatar"
-              className="w-full h-full object-cover rounded-full border-4 border-orange-500/50 shadow-[0_0_30px_rgba(255,165,0,0.3)] hover:scale-105 transition-transform duration-500"
+              alt="Hero"
+              className="w-full h-full object-cover"
             />
           </div>
 
           {/* Floating Icons */}
-          <div className="absolute top-0 right-0 p-3 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 animate-bounce delay-100 shadow-lg">
-            <span className="text-2xl">Ai</span>
+          <div className="absolute top-0 right-0 p-3 bg-white/80 dark:bg-white/10 backdrop-blur-md rounded-xl border border-gray-200 dark:border-white/20 animate-bounce delay-100 shadow-lg" data-aos="zoom-in" data-aos-delay="600">
+            <Code2 className="text-orange-500 w-6 h-6" />
           </div>
-          <div className="absolute bottom-10 left-0 p-3 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 animate-bounce delay-300 shadow-lg">
-            <span className="text-2xl">Pr</span>
+          <div className="absolute bottom-10 left-0 p-3 bg-white/80 dark:bg-white/10 backdrop-blur-md rounded-xl border border-gray-200 dark:border-white/20 animate-bounce delay-300 shadow-lg" data-aos="zoom-in" data-aos-delay="800">
+            <Database className="text-blue-500 w-6 h-6" />
           </div>
-          <div className="absolute top-1/2 -right-4 p-3 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 animate-bounce delay-500 shadow-lg">
-            <span className="text-2xl">Hi</span>
+          <div className="absolute top-1/2 -right-4 p-3 bg-white/80 dark:bg-white/10 backdrop-blur-md rounded-xl border border-gray-200 dark:border-white/20 animate-bounce delay-500 shadow-lg" data-aos="zoom-in" data-aos-delay="1000">
+            <Brain className="text-purple-500 w-6 h-6" />
           </div>
         </div>
       </div>
