@@ -3,7 +3,7 @@ import { Code2, Database, Layout, Brain } from 'lucide-react';
 
 const About = () => {
     return (
-        <section id="about" className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 py-20 px-6 transition-colors duration-300">
+        <section id="about" className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 py-10 md:py-20 px-6 transition-colors duration-300">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
 
                 {/* Left Column: Text Content */}
@@ -12,7 +12,7 @@ const About = () => {
                         About Me
                     </h3>
 
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white leading-tight">
+                    <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white leading-tight">
                         Passionate about <span className="text-orange-500">Data Science</span>, <br />
                         <span className="text-orange-500">Software Engineering</span> <br />
                         & <span className="text-orange-500">Web Development</span>
