@@ -68,21 +68,25 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
 
       {/* Mobile Menu Dropdown */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white dark:bg-gray-900 absolute top-full left-0 right-0 border-t border-gray-200 dark:border-gray-800 p-4 shadow-lg">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-t border-gray-200 dark:border-gray-800 p-4 shadow-lg transition-all duration-300 ease-in-out">
           <ul className="flex flex-col space-y-4">
             {navItems.map((item) => (
               <li key={item.name}>
                 <a
                   href={item.link}
                   onClick={() => setIsMenuOpen(false)}
-                  className="block text-center text-lg py-2 text-gray-700 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-500 transition-colors"
+                  className="block text-center text-lg font-medium py-2 text-gray-700 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-500 transition-colors"
                 >
                   {item.name}
                 </a>
               </li>
             ))}
             <li>
-              <a href="#contact" onClick={() => setIsMenuOpen(false)} className="w-full block text-center px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-full transition-colors">
+              <a
+                href="#contact"
+                onClick={() => setIsMenuOpen(false)}
+                className="w-full block text-center px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-full transition-colors shadow-lg shadow-orange-500/30"
+              >
                 Hire Me
               </a>
             </li>
