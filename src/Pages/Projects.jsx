@@ -20,7 +20,7 @@ const projects = [
         tech: ['Random Forest', 'Neural Network(MLP)', 'Decision Tree ', 'Support Vector Machine', 'Logistic Regression', 'XGBoost'],
         image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
         liveLink: '#',
-        githubLink: '#'
+        githubLink: 'https://github.com/senalanuraheesara/Diabetes-Prediction-Using-Machine-Learning'
     },
     {
         id: 3,
