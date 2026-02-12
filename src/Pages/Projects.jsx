@@ -2,6 +2,7 @@ import React from 'react';
 import { Github, ExternalLink } from 'lucide-react';
 import supportSystemImg from '../assets/Screenshot 2026-02-11 222316.png';
 import taxiBookingImg from '../assets/Screenshot 2026-02-12 001906.png';
+import diabetesPredictionImg from '../assets/AIML Project.png';
 
 const projects = [
     {
@@ -18,7 +19,7 @@ const projects = [
         title: 'Diabetes Prediction Using Machine Learning',
         description: 'Developed a machine learning-based diabetes risk prediction system using healthcare data. Implemented multiple classification models including Decision Tree, Random Forest, SVM, and XGBoost, with SMOTE for class imbalance handling. Achieved up to 99% accuracy, selecting a tuned Decision Tree model for its high recall and interpretability in healthcare applications.',
         tech: ['Random Forest', 'Neural Network(MLP)', 'Decision Tree ', 'Support Vector Machine', 'Logistic Regression', 'XGBoost'],
-        image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        image: diabetesPredictionImg,
         liveLink: '#',
         githubLink: 'https://github.com/senalanuraheesara/Diabetes-Prediction-Using-Machine-Learning'
     },
@@ -59,15 +60,17 @@ const Projects = () => {
                                 <img
                                     src={project.image}
                                     alt={project.title}
-                                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                    className="w-full h-full object-cover object-top transform group-hover:scale-100 transition-transform duration-500"
                                 />
                                 <div className="absolute bottom-4 left-4 z-20 flex gap-4">
                                     <a href={project.githubLink} className="p-2 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-orange-500 transition-colors">
                                         <Github size={20} />
                                     </a>
-                                    <a href={project.liveLink} className="p-2 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-orange-500 transition-colors">
-                                        <ExternalLink size={20} />
-                                    </a>
+                                    {project.liveLink && project.liveLink !== '#' && (
+                                        <a href={project.liveLink} className="p-2 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-orange-500 transition-colors">
+                                            <ExternalLink size={20} />
+                                        </a>
+                                    )}
                                 </div>
                             </div>
 
@@ -99,13 +102,15 @@ const Projects = () => {
                                         <Github size={18} />
                                         Code
                                     </a>
-                                    <a
-                                        href={project.liveLink}
-                                        className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-lg transition-colors font-medium shadow-lg shadow-orange-500/20"
-                                    >
-                                        <ExternalLink size={18} />
-                                        Demo
-                                    </a>
+                                    {project.liveLink && project.liveLink !== '#' && (
+                                        <a
+                                            href={project.liveLink}
+                                            className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-lg transition-colors font-medium shadow-lg shadow-orange-500/20"
+                                        >
+                                            <ExternalLink size={18} />
+                                            Demo
+                                        </a>
+                                    )}
                                 </div>
                             </div>
                         </div>
