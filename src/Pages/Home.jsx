@@ -6,7 +6,7 @@ import heroImg from '../assets/hero.JPG';
 
 const Home = () => {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-between min-h-screen px-6 md:px-20 py-10">
+    <div className="flex flex-col md:flex-row items-center justify-between min-h-screen px-6 md:px-20 py-20 md:py-10">
       <div className="md:w-1/2 space-y-6" data-aos="fade-right" data-aos-duration="1000">
         <div className="flex space-x-4 mb-4">
           {/* Social Icons */}
@@ -34,7 +34,7 @@ const Home = () => {
           </a>
         </div>
 
-        <h1 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+        <h1 className="text-4xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
           Hi, I'm <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500 dark:to-white">Senal Anuraheesara</span>
         </h1>
@@ -54,8 +54,8 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="md:w-1/2 relative flex justify-center mt-10 md:mt-0" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-        <div className="relative w-80 h-80 md:w-96 md:h-96">
+      <div className="md:w-1/2 relative flex justify-center mt-12 md:mt-0" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+        <div className="relative w-72 h-72 md:w-96 md:h-96">
           <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-purple-600 rounded-full blur-3xl opacity-20 dark:opacity-30 animate-pulse"></div>
           <div className="absolute inset-4 bg-white dark:bg-gray-900 rounded-full border-4 border-orange-500/20 z-10 overflow-hidden">
             <img
