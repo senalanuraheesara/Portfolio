@@ -3,6 +3,7 @@ import { Mail, Github, Linkedin, Code2, Database, Brain } from 'lucide-react';
 // Import your local image here. Place 'hero.JPG' in the 'src/assets' folder.
 // If your file has a different name or extension, update this line.
 import heroImg from '../assets/hero.JPG';
+import cvFile from '../assets/CV_Senal Anuraheesara.pdf';
 
 const Home = () => {
   return (
@@ -44,9 +45,9 @@ const Home = () => {
         </p>
 
         <div className="flex space-x-4 mt-8">
-          <button className="px-6 py-3 bg-orange-500 text-white font-semibold rounded-full flex items-center gap-2 hover:bg-orange-600 transition-colors shadow-lg">
+          <a href={cvFile} download="CV_Senal_Anuraheesara.pdf" className="px-6 py-3 bg-orange-500 text-white font-semibold rounded-full flex items-center gap-2 hover:bg-orange-600 transition-colors shadow-lg">
             <span>Download CV</span>
-          </button>
+          </a>
 
           <a href="#contact" className="px-6 py-3 border border-orange-500 text-orange-500 font-semibold rounded-full flex items-center gap-2 hover:bg-orange-500 hover:text-white transition-colors">
             <span>Contact Me</span>
