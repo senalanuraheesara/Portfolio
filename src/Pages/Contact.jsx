@@ -1,9 +1,12 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { motion, useReducedMotion } from 'framer-motion';
+import { cardElevated, cn, iconTileMuted, inputField, panelHighlight, sectionBand } from '../designTokens';
 
 const Contact = () => {
     const form = useRef();
+    const reduceMotion = useReducedMotion();
     const [status, setStatus] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
 
@@ -56,36 +59,53 @@ const Contact = () => {
     };
 
     return (
-        <div id="contact" className="min-h-screen flex items-center justify-center py-10 md:py-20 px-6 bg-white dark:bg-gray-900 transition-colors duration-300">
-            <div className="max-w-6xl w-full">
-                <div className="text-center mb-16" data-aos="fade-up">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
+        <div
+            id="contact"
+            className={cn(
+                'flex min-h-screen items-center justify-center overflow-x-clip py-10 pl-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] pb-[max(1.75rem,env(safe-area-inset-bottom,0px))] sm:px-6 md:py-20',
+                sectionBand,
+            )}
+        >
+            <div className="w-full min-w-0 max-w-6xl">
+                <motion.div
+                    className="mb-16 text-center"
+                    initial={reduceMotion ? false : { opacity: 0, y: 22 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                >
+                    <h2 className="mb-4 px-1 text-2xl font-bold text-gray-900 dark:text-white sm:text-3xl md:text-5xl">
                         Get In Touch
                     </h2>
-                    <p className="text-gray-600 dark:text-gray-400 text-lg">Have a project in mind? I'd love to hear about it. Send me a message and let's discuss how we can work together.</p>
-                </div>
+                    <p className="mx-auto max-w-2xl px-1 text-base text-gray-600 dark:text-gray-400 sm:text-lg">Have a project in mind? I'd love to hear about it. Send me a message and let's discuss how we can work together.</p>
+                </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    {/* Left Side - Contact Information */}
-                    <div className="space-y-8" data-aos="fade-right">
-                        <div className="bg-gray-50 dark:bg-gray-900/50 backdrop-blur-md p-8 rounded-2xl border border-gray-200 dark:border-white/10 shadow-lg dark:shadow-2xl h-full flex flex-col justify-between">
+                <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
+                    <motion.div
+                        className="space-y-8"
+                        initial={reduceMotion ? false : { opacity: 0, x: -28 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, amount: 0.15 }}
+                        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                    >
+                        <div className={cn('flex h-full min-w-0 flex-col justify-between p-6 sm:p-8', cardElevated)}>
                             <div>
-                                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">Contact Information</h3>
+                                <h3 className="mb-8 text-2xl font-bold text-gray-900 dark:text-white">Contact Information</h3>
                                 <div className="space-y-8">
                                     <div className="flex items-start gap-4 group cursor-pointer">
-                                        <div className="p-3 bg-gray-200 dark:bg-gray-800/50 rounded-lg group-hover:bg-orange-100 dark:group-hover:bg-orange-500/20 transition-colors">
+                                        <div className={iconTileMuted}>
                                             <Mail className="w-6 h-6 text-gray-600 dark:text-gray-300 group-hover:text-orange-600 dark:group-hover:text-orange-500 transition-colors" />
                                         </div>
                                         <div>
                                             <p className="text-sm text-gray-500 dark:text-gray-500 mb-1">Email</p>
-                                            <a href="mailto:senalanuraheesara@gmail.com" className="font-medium text-gray-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-500 transition-colors">
+                                            <a href="mailto:senalanuraheesara@gmail.com" className="font-medium text-gray-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-500 transition-colors break-all sm:break-normal">
                                                 senalanuraheesara@gmail.com
                                             </a>
                                         </div>
                                     </div>
 
                                     <div className="flex items-start gap-4 group cursor-pointer">
-                                        <div className="p-3 bg-gray-200 dark:bg-gray-800/50 rounded-lg group-hover:bg-orange-100 dark:group-hover:bg-orange-500/20 transition-colors">
+                                        <div className={iconTileMuted}>
                                             <Phone className="w-6 h-6 text-gray-600 dark:text-gray-300 group-hover:text-orange-600 dark:group-hover:text-orange-500 transition-colors" />
                                         </div>
                                         <div>
@@ -97,7 +117,7 @@ const Contact = () => {
                                     </div>
 
                                     <div className="flex items-start gap-4 group cursor-pointer">
-                                        <div className="p-3 bg-gray-200 dark:bg-gray-800/50 rounded-lg group-hover:bg-orange-100 dark:group-hover:bg-orange-500/20 transition-colors">
+                                        <div className={iconTileMuted}>
                                             <MapPin className="w-6 h-6 text-gray-600 dark:text-gray-300 group-hover:text-orange-600 dark:group-hover:text-orange-500 transition-colors" />
                                         </div>
                                         <div>
@@ -111,24 +131,29 @@ const Contact = () => {
                             </div>
 
                             {/* Internship Status Card */}
-                            <div className="mt-12 bg-white dark:bg-gray-800/30 p-6 rounded-xl border border-gray-200 dark:border-white/5 shadow-sm dark:shadow-none">
-                                <div className="flex items-center gap-3 mb-2">
-                                    <span className="relative flex h-3 w-3">
-                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                        <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                            <div className={cn('mt-12', panelHighlight)}>
+                                <div className="mb-2 flex flex-wrap items-start gap-3">
+                                    <span className="relative mt-1 flex h-3 w-3 shrink-0">
+                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+                                        <span className="relative inline-flex h-3 w-3 rounded-full bg-orange-500"></span>
                                     </span>
-                                    <h4 className="text-gray-900 dark:text-white font-semibold">Currently Available for Internships</h4>
+                                    <h4 className="min-w-0 text-base font-semibold leading-snug text-gray-900 dark:text-white sm:text-lg">Currently Available for Internships</h4>
                                 </div>
-                                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
-                                    I'm currently seeking internship opportunities in software engineering and web development. Open to discussing how I can contribute to your team.
+                                <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+                                    I'm currently seeking internship opportunities in software engineering, web development, and data science. Open to discussing how I can contribute to your team.
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
 
-                    {/* Right Side - Form */}
-                    <div className="bg-gray-50 dark:bg-gray-900/50 backdrop-blur-md p-8 rounded-2xl border border-gray-200 dark:border-white/10 shadow-lg dark:shadow-xl" data-aos="fade-left">
-                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Send Message</h3>
+                    <motion.div
+                        className={cn('min-w-0 p-6 sm:p-8', cardElevated)}
+                        initial={reduceMotion ? false : { opacity: 0, x: 28 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, amount: 0.15 }}
+                        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: reduceMotion ? 0 : 0.08 }}
+                    >
+                        <h3 className="mb-6 text-2xl font-bold text-gray-900 dark:text-white">Send Message</h3>
                         <form ref={form} onSubmit={sendEmail} className="space-y-6">
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 <div className="space-y-2">
@@ -138,7 +163,7 @@ const Contact = () => {
                                         name="user_name"
                                         placeholder="John Doe"
                                         required
-                                        className="w-full px-4 py-3 bg-white dark:bg-gray-800/50 border border-gray-300 dark:border-gray-700 rounded-xl focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition-all text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
+                                        className={inputField}
                                     />
                                 </div>
                                 <div className="space-y-2">
@@ -148,7 +173,7 @@ const Contact = () => {
                                         name="user_email"
                                         placeholder="john@example.com"
                                         required
-                                        className="w-full px-4 py-3 bg-white dark:bg-gray-800/50 border border-gray-300 dark:border-gray-700 rounded-xl focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition-all text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
+                                        className={inputField}
                                     />
                                 </div>
                             </div>
@@ -160,7 +185,7 @@ const Contact = () => {
                                     name="subject"
                                     placeholder="Project Inquiry"
                                     required
-                                    className="w-full px-4 py-3 bg-white dark:bg-gray-800/50 border border-gray-300 dark:border-gray-700 rounded-xl focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition-all text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
+                                    className={inputField}
                                 />
                             </div>
 
@@ -171,14 +196,16 @@ const Contact = () => {
                                     rows="4"
                                     placeholder="Tell me about your project..."
                                     required
-                                    className="w-full px-4 py-3 bg-white dark:bg-gray-800/50 border border-gray-300 dark:border-gray-700 rounded-xl focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition-all text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
+                                    className={inputField}
                                 ></textarea>
                             </div>
 
-                            <button
+                            <motion.button
                                 type="submit"
                                 disabled={status === 'sending'}
-                                className="w-full py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-orange-500/25 flex items-center justify-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed"
+                                className="group flex w-full items-center justify-center gap-2 rounded-xl bg-orange-500 py-4 font-bold text-white shadow-lg transition-colors hover:bg-orange-600 hover:shadow-orange-500/35 disabled:cursor-not-allowed disabled:opacity-70"
+                                whileHover={reduceMotion || status === 'sending' ? undefined : { scale: 1.02 }}
+                                whileTap={reduceMotion || status === 'sending' ? undefined : { scale: 0.98 }}
                             >
                                 {status === 'sending' ? (
                                     <>
@@ -191,7 +218,7 @@ const Contact = () => {
                                         Send Message
                                     </>
                                 )}
-                            </button>
+                            </motion.button>
                             {status === 'success' && (
                                 <p className="text-green-500 text-center text-sm font-medium mt-2 animate-fade-in">
                                     Message sent successfully!
@@ -215,7 +242,7 @@ const Contact = () => {
                                 </p>
                             )}
                         </form>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </div>
