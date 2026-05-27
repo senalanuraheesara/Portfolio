@@ -24,7 +24,7 @@ const projects = [
     githubLink: 'https://github.com/senalanuraheesara/ShanArts',
     imageAlt: 'Shan Arts Printing Management — promotional poster with application UI',
     imageObjectPositionClass: 'object-center',
-    imageAspectRatioClass: 'aspect-[4/5]',
+    imageAspectRatioClass: 'h-64 sm:h-80 md:h-auto md:aspect-[4/5]',
     imageBgClass: 'bg-zinc-950 dark:bg-zinc-900',
   },
   {
@@ -39,7 +39,7 @@ const projects = [
     githubLink: 'https://github.com/senalanuraheesara/Avurudu-Nakath',
     imageAlt: 'Avurudu Nakath app — promotional poster with phone UI and QR code',
     imageObjectPositionClass: 'object-center',
-    imageAspectRatioClass: 'aspect-[4/5]',
+    imageAspectRatioClass: 'h-64 sm:h-80 md:h-auto md:aspect-[4/5]',
     imageBgClass: 'bg-[#fbf4e5] dark:bg-[#1f1a14]',
   },
   {
@@ -53,7 +53,7 @@ const projects = [
     githubLink: 'https://github.com/senalanuraheesara/PetCare-Management-System',
     imageAlt: 'Doggy — Smart Pet Care Mobile App presentation poster',
     imageObjectPositionClass: 'object-center',
-    imageAspectRatioClass: 'aspect-[4/5]',
+    imageAspectRatioClass: 'h-64 sm:h-80 md:h-auto md:aspect-[4/5]',
     imageBgClass: 'bg-[#e6f8f5] dark:bg-[#0c1816]',
   },
   {
@@ -124,7 +124,7 @@ function ProjectCard({ project, index }) {
       }}
       whileHover={reduceMotion ? undefined : { y: -8, transition: { type: 'spring', stiffness: 380, damping: 26 } }}
     >
-      <div className={cn("relative shrink-0 overflow-hidden", project.imageAspectRatioClass ?? "h-52", project.imageBgClass ?? "bg-orange-50 dark:bg-portfolio-dark")}>
+      <div className={cn("relative shrink-0 overflow-hidden", project.imageAspectRatioClass ?? "h-44 sm:h-52", project.imageBgClass ?? "bg-orange-50 dark:bg-portfolio-dark")}>
         <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-gray-950/65 via-transparent to-transparent opacity-95 dark:from-portfolio-dark/90" />
         {liveOk && (
           <span className="absolute right-3 top-3 z-20 rounded-full bg-orange-500/95 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white shadow-md shadow-orange-500/30 backdrop-blur-sm">
