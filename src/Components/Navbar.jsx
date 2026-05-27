@@ -134,42 +134,46 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
 
       {isMenuOpen && (
         <motion.div
-          className="absolute left-0 right-0 top-full max-h-[min(82dvh,26rem)] overflow-y-auto overscroll-y-contain border-t border-orange-100/70 bg-white/98 py-4 pl-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] pb-[max(1.25rem,env(safe-area-inset-bottom,0px))] shadow-lg shadow-orange-950/10 backdrop-blur-md dark:border-white/10 dark:bg-portfolio-dark/98 sm:max-h-[min(75vh,30rem)] lg:hidden"
-          initial={reduceMotion ? false : { opacity: 0, y: -8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+          className="fixed inset-0 z-40 flex flex-col justify-between bg-white/98 py-8 pl-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] pb-[max(2rem,env(safe-area-inset-bottom,0px))] pt-[max(env(safe-area-inset-top,0px),5.5rem)] dark:bg-portfolio-dark/99 backdrop-blur-md lg:hidden"
+          initial={reduceMotion ? false : { opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.22 }}
         >
-          <ul className="flex flex-col space-y-1">
-            {navItems.map((item, i) => (
-              <motion.li
-                key={item.name}
-                initial={reduceMotion ? false : { opacity: 0, x: -12 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.04 * i, duration: 0.3 }}
-              >
-                <a
-                  href={item.link}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="flex min-h-12 items-center justify-center rounded-xl px-2 text-center text-base font-medium text-gray-700 transition-colors hover:bg-orange-50 hover:text-orange-600 active:scale-[0.99] dark:text-gray-300 dark:hover:bg-white/5 dark:hover:text-orange-500"
+          <div className="flex flex-1 flex-col justify-center items-center">
+            <ul className="flex flex-col items-center space-y-6">
+              {navItems.map((item, i) => (
+                <motion.li
+                  key={item.name}
+                  initial={reduceMotion ? false : { opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.03 * i, duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                 >
-                  {item.name}
-                </a>
-              </motion.li>
-            ))}
-            <li>
-              <motion.a
-                href="#contact"
-                onClick={() => setIsMenuOpen(false)}
-                className="mt-2 block w-full rounded-full bg-orange-500 px-6 py-3 text-center font-semibold text-white shadow-lg shadow-orange-500/45 transition-colors hover:bg-orange-600"
-                initial={reduceMotion ? false : { opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.15, duration: 0.35 }}
-                whileTap={reduceMotion ? undefined : { scale: 0.98 }}
-              >
-                Hire Me
-              </motion.a>
-            </li>
-          </ul>
+                  <a
+                    href={item.link}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block text-2xl font-semibold text-gray-800 transition-colors hover:text-orange-500 active:scale-95 dark:text-gray-200 dark:hover:text-orange-400"
+                  >
+                    {item.name}
+                  </a>
+                </motion.li>
+              ))}
+            </ul>
+          </div>
+          
+          <motion.div 
+            className="w-full px-4 max-w-sm mx-auto"
+            initial={reduceMotion ? false : { opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.12 + 0.03 * navItems.length, duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <a
+              href="#contact"
+              onClick={() => setIsMenuOpen(false)}
+              className="block w-full rounded-full bg-orange-500 px-6 py-3.5 text-center font-semibold text-white shadow-lg shadow-orange-500/40 transition-colors hover:bg-orange-600 active:scale-[0.98]"
+            >
+              Hire Me
+            </a>
+          </motion.div>
         </motion.div>
       )}
     </motion.nav>
