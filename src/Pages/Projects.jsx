@@ -5,12 +5,57 @@ import { cardHover, cardProject, chipMuted, cn, sectionBand } from '../designTok
 import supportSystemImg from '../assets/Screenshot 2026-02-11 222316.png';
 import taxiBookingImg from '../assets/Screenshot 2026-02-12 001906.png';
 import diabetesPredictionImg from '../assets/AIML Project.png';
-import shanartsHeroImg from '../assets/shanarts-hero.png';
-import avuruduNakathPosterImg from '../assets/avurudu-nakath-poster.png';
+import shanartsHeroImg from '../assets/ChatGPT Image May 27, 2026, 12_39_25 PM.png';
+import avuruduNakathPosterImg from '../assets/ChatGPT Image May 27, 2026, 12_06_36 PM.png';
+import doggyPetCareImg from '../assets/ChatGPT Image May 27, 2026, 12_17_42 AM (1).png';
 
 const DESCRIPTION_PREVIEW_CHARS = 220;
 
 const projects = [
+  {
+    id: 5,
+    title: 'ShanArts — Printing management',
+    description:
+      'A predictive machine learning-driven printing operations platform for Shan Art Advertising. The core features a custom-trained XGBoost classification model served via a Python FastAPI backend to predict shop order delay risks, computing confidence levels and probabilities. These delay predictions dynamically optimize scheduling workflows, automatically triggering administrative alerts and Ollama AI-powered notification updates to clients for high-risk orders. The full-stack ecosystem is completed with a React (CRA) frontend and a Node.js/Express/MongoDB API.',
+    tech: ['React', 'Express', 'MongoDB', 'JWT', 'FastAPI', 'XGBoost', 'Ollama'],
+    image: shanartsHeroImg,
+    liveLink: 'https://shan-arts.vercel.app',
+    demoLabel: 'Live app',
+    githubLink: 'https://github.com/senalanuraheesara/ShanArts',
+    imageAlt: 'Shan Arts Printing Management — promotional poster with application UI',
+    imageObjectPositionClass: 'object-center',
+    imageAspectRatioClass: 'aspect-[4/5]',
+    imageBgClass: 'bg-zinc-950 dark:bg-zinc-900',
+  },
+  {
+    id: 4,
+    title: 'Avurudu Nakath',
+    description:
+      'An offline-first, cross-platform mobile application built using Expo and React Native to track Sinhala & Hindu New Year auspicious times (Nakath) for 2026. Featuring support for Sinhala, English, and Tamil, the app includes a dynamic countdown timer, a themed active-ritual hero banner with motion animations, and local notifications to remind users of upcoming events. It also incorporates a custom-built digital compass for direction-based rituals. The architecture is completely serverless, storing the timetable locally in structured TypeScript and managing user preferences on-device using AsyncStorage.',
+    tech: ['Expo', 'React Native', 'TypeScript', 'i18n', 'AsyncStorage'],
+    image: avuruduNakathPosterImg,
+    liveLink: 'https://expo.dev/accounts/senalanuraheesara/projects/avurudu-nakath',
+    demoLabel: 'Expo hub',
+    githubLink: 'https://github.com/senalanuraheesara/Avurudu-Nakath',
+    imageAlt: 'Avurudu Nakath app — promotional poster with phone UI and QR code',
+    imageObjectPositionClass: 'object-center',
+    imageAspectRatioClass: 'aspect-[4/5]',
+    imageBgClass: 'bg-[#fbf4e5] dark:bg-[#1f1a14]',
+  },
+  {
+    id: 6,
+    title: 'Smart Pet Care Management System',
+    description:
+      'A full-stack pet care ecosystem comprising an Expo (React Native) mobile client and a Node.js/Express API backed by MongoDB. It enables pet owners to manage pet profiles, request boarding and grooming bookings, and track appointments, vaccinations, diet schedules, and medications. Administrators benefit from a dedicated dashboard to manage vet schedules, booking approvals, and service catalogs. Features role-based JWT auth and a custom OTP-based signup flow.',
+    tech: ['Expo', 'React Native', 'Node.js', 'Express', 'MongoDB', 'JWT'],
+    image: doggyPetCareImg,
+    liveLink: '#',
+    githubLink: 'https://github.com/senalanuraheesara/PetCare-Management-System',
+    imageAlt: 'Doggy — Smart Pet Care Mobile App presentation poster',
+    imageObjectPositionClass: 'object-center',
+    imageAspectRatioClass: 'aspect-[4/5]',
+    imageBgClass: 'bg-[#e6f8f5] dark:bg-[#0c1816]',
+  },
   {
     id: 1,
     title: 'Web-Based Customer Support System',
@@ -40,31 +85,6 @@ const projects = [
     image: taxiBookingImg,
     liveLink: '#',
     githubLink: 'https://github.com/senalanuraheesara/Taxibooking-platform',
-  },
-  {
-    id: 4,
-    title: 'Avurudu Nakath',
-    description:
-      'Cross-platform mobile app (Expo / React Native) for Sinhala & Hindu New Year auspicious times in 2026. Offline-first: the nakath timetable is bundled for Asia/Colombo with no backend. Supports Sinhala, English, and Tamil; active-nakath hero, countdown, full schedule with reminders (local notifications), and a compass for direction-based rituals—all data lives in structured TypeScript with small on-device prefs only.',
-    tech: ['Expo', 'React Native', 'TypeScript', 'i18n', 'AsyncStorage'],
-    image: avuruduNakathPosterImg,
-    liveLink: 'https://expo.dev/accounts/senalanuraheesara/projects/avurudu-nakath',
-    demoLabel: 'Expo hub',
-    githubLink: 'https://github.com/senalanuraheesara/Avurudu-Nakath',
-    imageAlt: 'Avurudu Nakath app — promotional poster with phone UI and QR code',
-    imageObjectPositionClass: 'object-center',
-  },
-  {
-    id: 5,
-    title: 'ShanArts — Printing management',
-    description:
-      'Full-stack printing operations app for Shan Art Advertising: orders, scheduling, inventory, billing, and notifications—with optional ML-based job delay-risk scoring (XGBoost via FastAPI) feeding the schedule workflow. Frontend in React (CRA); API in Node.js, Express, MongoDB, JWT, and Google Sign-In; deployable split between Vercel (client) and Railway (server). Built as an SLIIT IT2021-AIML module project.',
-    tech: ['React', 'Express', 'MongoDB', 'JWT', 'FastAPI', 'XGBoost'],
-    image: shanartsHeroImg,
-    liveLink: 'https://shan-arts.vercel.app',
-    demoLabel: 'Live app',
-    githubLink: 'https://github.com/senalanuraheesara/ShanArts',
-    imageAlt: 'Shan Art Advertising — landing page screenshot',
   },
 ];
 
@@ -104,7 +124,7 @@ function ProjectCard({ project, index }) {
       }}
       whileHover={reduceMotion ? undefined : { y: -8, transition: { type: 'spring', stiffness: 380, damping: 26 } }}
     >
-      <div className="relative h-52 shrink-0 overflow-hidden bg-orange-50 dark:bg-portfolio-dark">
+      <div className={cn("relative shrink-0 overflow-hidden", project.imageAspectRatioClass ?? "h-52", project.imageBgClass ?? "bg-orange-50 dark:bg-portfolio-dark")}>
         <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-gray-950/65 via-transparent to-transparent opacity-95 dark:from-portfolio-dark/90" />
         {liveOk && (
           <span className="absolute right-3 top-3 z-20 rounded-full bg-orange-500/95 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white shadow-md shadow-orange-500/30 backdrop-blur-sm">
@@ -115,7 +135,7 @@ function ProjectCard({ project, index }) {
           <img
             src={project.image}
             alt={project.imageAlt ?? ''}
-            className={`h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100 ${project.imageObjectPositionClass ?? 'object-top'}`}
+            className={`h-full w-full ${project.imageFitClass ?? 'object-cover'} transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100 ${project.imageObjectPositionClass ?? 'object-top'}`}
           />
         ) : (
           <div
@@ -197,6 +217,8 @@ function ProjectCard({ project, index }) {
 
 export default function Projects() {
   const reduceMotion = useReducedMotion();
+  const featuredProjects = projects.slice(0, 3);
+  const otherProjects = projects.slice(3);
 
   return (
     <section
@@ -233,10 +255,22 @@ export default function Projects() {
           </p>
         </motion.header>
 
-        <div className="grid grid-cols-1 gap-7 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
-          {projects.map((project, i) => (
-            <ProjectCard key={project.id} project={project} index={i} />
-          ))}
+        {/* Featured Projects - Vertical Posters */}
+        <div className="mx-auto mb-16 max-w-7xl">
+          <div className="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3 md:gap-8">
+            {featuredProjects.map((project, i) => (
+              <ProjectCard key={project.id} project={project} index={i} />
+            ))}
+          </div>
+        </div>
+
+        {/* Other Projects */}
+        <div className="border-t border-gray-150 pt-16 dark:border-white/5">
+          <div className="grid grid-cols-1 gap-7 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
+            {otherProjects.map((project, i) => (
+              <ProjectCard key={project.id} project={project} index={i + featuredProjects.length} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
