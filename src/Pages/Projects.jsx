@@ -24,7 +24,7 @@ const projects = [
     githubLink: 'https://github.com/senalanuraheesara/ShanArts',
     imageAlt: 'Shan Arts Printing Management — promotional poster with application UI',
     imageObjectPositionClass: 'object-center',
-    imageAspectRatioClass: 'h-64 sm:h-80 md:h-auto md:aspect-[4/5]',
+    imageAspectRatioClass: 'aspect-[4/5]',
     imageBgClass: 'bg-zinc-950 dark:bg-zinc-900',
   },
   {
@@ -39,7 +39,7 @@ const projects = [
     githubLink: 'https://github.com/senalanuraheesara/Avurudu-Nakath',
     imageAlt: 'Avurudu Nakath app — promotional poster with phone UI and QR code',
     imageObjectPositionClass: 'object-center',
-    imageAspectRatioClass: 'h-64 sm:h-80 md:h-auto md:aspect-[4/5]',
+    imageAspectRatioClass: 'aspect-[4/5]',
     imageBgClass: 'bg-[#fbf4e5] dark:bg-[#1f1a14]',
   },
   {
@@ -53,7 +53,7 @@ const projects = [
     githubLink: 'https://github.com/senalanuraheesara/PetCare-Management-System',
     imageAlt: 'Doggy — Smart Pet Care Mobile App presentation poster',
     imageObjectPositionClass: 'object-center',
-    imageAspectRatioClass: 'h-64 sm:h-80 md:h-auto md:aspect-[4/5]',
+    imageAspectRatioClass: 'aspect-[4/5]',
     imageBgClass: 'bg-[#e6f8f5] dark:bg-[#0c1816]',
   },
   {
